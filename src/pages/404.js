@@ -1,54 +1,32 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import { Link } from 'gatsby';
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <section className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
+      <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+        <div className="max-w-md text-center">
+          <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
+            <span className="sr-only">Error</span>404
+          </h2>
+          <p className="text-2xl font-semibold md:text-3xl">
+            Sorry, we couldn't find this page.
+          </p>
+          <p className="mt-4 mb-8 dark:text-gray-400">
+            But dont worry, you can find plenty of other things on our homepage.
+          </p>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
+          >
+            Back to homepage
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
